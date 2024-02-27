@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1019020713012",
+    "project_id": "roadseyelogin",
+    "storage_bucket": "roadseyelogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019020713012:android:ca90c5c4b1a0499aa63e61",
+        "android_client_info": {
+          "package_name": "com.example.roadseyelogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJlvcVw3aNQa3VnEiqQQf4woqVUA-064A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.KeyEvent
-import android.view.View
 import android.widget.Toast
 import com.example.roadseyelogin.databinding.ActivityOtpBinding
 
@@ -20,7 +18,7 @@ class OtpActivity : AppCompatActivity() {
 
         binding.mobileNo.text = String.format("+91-%s", intent.getStringExtra("mobile"))
 
-        binding.getOtp.setOnClickListener {view ->
+        binding.submit.setOnClickListener {view ->
             val n1 = binding.inputotp1.text.toString().trim()
             val n2 = binding.inputotp2.text.toString().trim()
             val n3 = binding.inputotp3.text.toString().trim()
