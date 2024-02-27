@@ -29,19 +29,16 @@ class LoginActivity : AppCompatActivity() {
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 // This callback will be invoked in two situations:
-                // 1. Instant verification. In some cases, the phone number can be instantly
-                //    verified without needing to send or enter a verification code.
-                // 2. Auto-retrieval. On some devices, Google Play services can automatically
-                //    detect the incoming verification SMS and perform verification without user action.
+                // 1. Instant verification.
+                // 2. Auto-retrieval.
 
-                // Sign in with the auto-retrieved phone credential.
+                // You can handle verification completed logic here if needed
                 signInWithPhoneAuthCredential(credential)
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                // This callback is invoked if an invalid request for verification is made,
-                // for instance, if the phone number format is not valid.
-                Toast.makeText(this@LoginActivity, "Verification Failed", Toast.LENGTH_SHORT).show()
+                // This callback is invoked if an invalid request for verification is made.
+                Toast.makeText(this@LoginActivity, "Verification Failed: ${e.message}", Toast.LENGTH_SHORT).show()
                 binding.getOtpProgress.visibility = View.INVISIBLE
                 binding.getOtp.visibility = View.VISIBLE
             }
@@ -51,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 token: PhoneAuthProvider.ForceResendingToken
             ) {
                 // The SMS verification code has been sent to the provided phone number,
-                // we need to save the verificationId and start the OtpActivity
+                // start the next activity to handle the verification
                 val intent = Intent(this@LoginActivity, OtpActivity::class.java)
                 intent.putExtra("mobile", binding.inputMobileNumber.text.toString())
                 intent.putExtra("verificationId", verificationId)
@@ -66,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
                 binding.getOtp.visibility = View.INVISIBLE
 
                 // Start the phone number verification process
-                startPhoneNumberVerification(number)
+                startPhoneNumberVerification("+91$number")
             } else {
                 val message = if (number.isEmpty()) {
                     "Enter Mobile number"
@@ -95,12 +92,21 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, navigate to the next activity if needed
                     val user = task.result?.user
-                    // You can add your logic here to handle successful sign in
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Authentication successful.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    // If you want to navigate to the next activity after successful authentication, you can do it here.
+                    // For example:
+                    // val intent = Intent(this@LoginActivity, NextActivity::class.java)
+                    // startActivity(intent)
                 } else {
                     // Sign in failed
                     Toast.makeText(
                         this@LoginActivity,
-                        "Authentication Failed.",
+                        "Authentication Failed: ${task.exception?.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                     binding.getOtpProgress.visibility = View.INVISIBLE
