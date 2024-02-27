@@ -1,13 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#FEFEFE"
     tools:context=".LoginActivity">
 
+        <ImageView
+            android:id="@+id/loginImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/loginimage"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/login_with_otp"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito"
+            android:textColor="?attr/colorPrimary"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingVertical="13dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/input_box_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_moblie_number"
+                android:textSize="10sp"
+                android:fontFamily="@font/nunito"
+                android:textColor="#B5B2B2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="+91"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/nunito"
+                    android:textColor="?attr/colorPrimary"/>
+
+                <EditText
+                    android:id="@+id/input_mobile_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="9876543210"
+                    android:inputType="number"
+                    android:importantForAutofill="no"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/call"
+                    android:layout_marginLeft="100dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/get_otp"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@null"
+            android:background="@drawable/get_otp_background"
+            android:text="GET OTP"
+            android:textColor="?attr/colorPrimaryContainer"
+            android:fontFamily="@font/nunito"
+
+
+            />
 
 
 
 
-</ScrollView>
+
+
+
+</LinearLayout>

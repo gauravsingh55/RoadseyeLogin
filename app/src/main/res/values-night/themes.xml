@@ -5,6 +5,8 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <!-- Theme colors. -->
-        <item name="colorPrimary">#3483fd</item>
+        <item name="colorContainer">#3483fd</item>
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryContainer">#F5F4F4</item>
     </style>
 </resources>

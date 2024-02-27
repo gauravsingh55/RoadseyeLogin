@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RoadseyeLogin</string>
+    <string name="login_with_otp">Login with OTP</string>
+    <string name="enter_moblie_number">Enter Moblie number</string>
 </resources>
