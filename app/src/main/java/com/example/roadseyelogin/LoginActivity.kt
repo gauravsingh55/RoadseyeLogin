@@ -1,9 +1,10 @@
+package com.example.roadseyelogin
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.roadseyelogin.OtpActivity
 import com.example.roadseyelogin.databinding.ActivityLoginBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
