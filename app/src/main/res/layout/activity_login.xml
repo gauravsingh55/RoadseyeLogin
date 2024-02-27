@@ -13,7 +13,8 @@
             android:id="@+id/loginImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/loginimage"/>
+            android:src="@drawable/loginimage"
+            android:contentDescription="@string/logo" />
 
         <TextView
             android:layout_width="match_parent"
@@ -39,8 +40,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_moblie_number"
-                android:textSize="10sp"
+                android:text="@string/enter_mobile_number"
+                android:textSize="12sp"
                 android:fontFamily="@font/nunito"
                 android:textColor="#B5B2B2"/>
 
@@ -54,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="+91"
+                    android:text="@string/country_code_india"
                     android:textSize="18sp"
                     android:fontFamily="@font/nunito"
                     android:textColor="?attr/colorPrimary"/>
@@ -63,11 +64,12 @@
                     android:id="@+id/input_mobile_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
                     android:background="@null"
                     android:gravity="center"
-                    android:hint="9876543210"
+                    android:hint="@string/Dummy_Pno"
                     android:inputType="number"
+                    android:maxLength="10"
                     android:importantForAutofill="no"
                     android:fontFamily="@font/nunito"
                     android:textSize="18sp"/>
@@ -76,8 +78,9 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/call"
-                    android:layout_marginLeft="100dp"
-                    android:gravity="center"/>
+                    android:layout_marginStart="100dp"
+                    android:gravity="center"
+                    android:contentDescription="@string/phone_icon" />
 
             </LinearLayout>
 
@@ -90,7 +93,7 @@
             android:layout_marginTop="25dp"
             android:backgroundTint="@null"
             android:background="@drawable/get_otp_background"
-            android:text="GET OTP"
+            android:text="@string/get_otp"
             android:textColor="?attr/colorPrimaryContainer"
             android:fontFamily="@font/nunito" />
 

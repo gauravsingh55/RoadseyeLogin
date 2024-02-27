@@ -1,5 +1,16 @@
 <resources>
-    <string name="app_name">RoadseyeLogin</string>
+    <string name="app_name">Roadseye Login</string>
     <string name="login_with_otp">Login with OTP</string>
-    <string name="enter_moblie_number">Enter Moblie number</string>
+    <string name="enter_mobile_number">Enter Mobile number</string>
+    <string name="logo">logo</string>
+    <string name="country_code_india">+91</string>
+    <string name="Dummy_Pno">9876543210</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="otp_logo">Otp logo</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="please_enter_the_otp_sent_to_you">Please enter the OTP sent to you</string>
+    <string name="didnt_recieve_it">Didnt recieve it? :</string>
+    <string name="resend_otp">RESEND OTP?</string>
+    <string name="phone_icon">Phone icon</string>
+    <string name="submit">Submit</string>
 </resources>

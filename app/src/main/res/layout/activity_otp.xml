@@ -1,9 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#FEFEFE"
     tools:context=".OtpActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/otp"
+        android:contentDescription="@string/otp_logo" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_verification"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textColor="?attr/colorPrimary"
+        android:fontFamily="@font/nunito"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/please_enter_the_otp_sent_to_you"
+        android:textSize="15sp"
+        android:fontFamily="@font/nunito"
+        android:textColor="#B5B2B2"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:fontFamily="@font/nunito"
+        android:textColor="?attr/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:id="@+id/inputotp1"
+            android:background="@drawable/input_box_background"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            android:fontFamily="@font/nunito"
+            tools:ignore="LabelFor" />
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:id="@+id/inputotp2"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/input_box_background"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            android:fontFamily="@font/nunito"
+            tools:ignore="LabelFor" />
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:id="@+id/inputotp3"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/input_box_background"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            android:fontFamily="@font/nunito"
+            tools:ignore="LabelFor" />
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:id="@+id/inputotp4"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/input_box_background"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            android:fontFamily="@font/nunito"
+            tools:ignore="LabelFor" />
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:id="@+id/inputotp5"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/input_box_background"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            android:fontFamily="@font/nunito"
+            tools:ignore="LabelFor" />
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:id="@+id/inputotp6"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/input_box_background"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            android:fontFamily="@font/nunito"
+            tools:ignore="LabelFor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="@string/didnt_recieve_it"
+            android:fontFamily="@font/nunito"
+            android:textColor="#B5B2B2"/>
+
+        <TextView
+            android:id="@+id/resendotp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="15sp"
+            android:text="@string/resend_otp"
+            android:fontFamily="@font/nunito"
+            android:textColor="?attr/colorPrimary"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/get_otp"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@null"
+        android:background="@drawable/get_otp_background"
+        android:text="@string/submit"
+        android:textColor="?attr/colorPrimaryContainer"
+        android:fontFamily="@font/nunito" />
+
+
+
+</LinearLayout>
