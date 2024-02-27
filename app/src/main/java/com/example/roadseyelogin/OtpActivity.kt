@@ -22,11 +22,11 @@ class OtpActivity : AppCompatActivity() {
 
         binding.getOtp.setOnClickListener {view ->
             val n1 = binding.inputotp1.text.toString().trim()
-            val n2 = binding.inputotp1.text.toString().trim()
-            val n3 = binding.inputotp1.text.toString().trim()
-            val n4 = binding.inputotp1.text.toString().trim()
-            val n5 = binding.inputotp1.text.toString().trim()
-            val n6 = binding.inputotp1.text.toString().trim()
+            val n2 = binding.inputotp2.text.toString().trim()
+            val n3 = binding.inputotp3.text.toString().trim()
+            val n4 = binding.inputotp4.text.toString().trim()
+            val n5 = binding.inputotp5.text.toString().trim()
+            val n6 = binding.inputotp6.text.toString().trim()
 
 
             val message = if (n1.isNotEmpty() && n2.isNotEmpty() && n3.isNotEmpty()
