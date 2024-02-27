@@ -1,22 +1,31 @@
 package com.example.roadseyelogin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
 import com.example.roadseyelogin.databinding.ActivityOtpBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
 
 
 class OtpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOtpBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOtpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.mobileNo.text = String.format("+91-%s", intent.getStringExtra("mobile"))
+        val backendotp = intent.getStringExtra("verificationId").toString()
+        val mobileNo = String.format("+91-%s", intent.getStringExtra("mobile"))
+        binding.mobileNo.text = mobileNo
+
 
         binding.submit.setOnClickListener {view ->
             val n1 = binding.inputotp1.text.toString().trim()
@@ -29,7 +38,35 @@ class OtpActivity : AppCompatActivity() {
 
             val message = if (n1.isNotEmpty() && n2.isNotEmpty() && n3.isNotEmpty()
                 && n4.isNotEmpty() && n5.isNotEmpty() && n6.isNotEmpty()) {
-                // logic for verifying the numbers goes here
+
+                val otp = n1+n2+n3+n4+n5+n6
+                if(backendotp != null){
+
+                    binding.submitProgress.visibility = View.VISIBLE
+                    binding.submit.visibility = View.INVISIBLE
+
+                    val phoneAuthCredential : PhoneAuthCredential = PhoneAuthProvider.getCredential(backendotp,otp)
+                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
+                        .addOnCompleteListener {task ->
+
+                            binding.submitProgress.visibility = View.GONE
+                            binding.submit.visibility = View.VISIBLE
+
+                            if (task.isSuccessful) {
+                                // Authentication successful, you can proceed to the next activity or any other logic
+                                val intent = Intent(this@OtpActivity, HomeActivity::class.java)
+                                intent.putExtra("mobile", mobileNo)
+                                startActivity(intent)
+                                Toast.makeText(this@OtpActivity, "Authentication successful", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this@OtpActivity, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            }
+
+                        }
+
+                }else{
+                    Toast.makeText(view.context, "check you internet", Toast.LENGTH_SHORT).show()
+                }
                 "OTP verified"
             } else {
                 "Please enter all numbers"
@@ -39,6 +76,7 @@ class OtpActivity : AppCompatActivity() {
 
         numberOtpMove()
     }
+
 
     private fun numberOtpMove() {
 
