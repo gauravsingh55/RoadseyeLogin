@@ -92,15 +92,6 @@
             android:background="@drawable/get_otp_background"
             android:text="GET OTP"
             android:textColor="?attr/colorPrimaryContainer"
-            android:fontFamily="@font/nunito"
-
-
-            />
-
-
-
-
-
-
+            android:fontFamily="@font/nunito" />
 
 </LinearLayout>
