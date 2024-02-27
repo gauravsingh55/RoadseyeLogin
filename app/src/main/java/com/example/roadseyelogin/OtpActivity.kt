@@ -94,7 +94,7 @@ class OtpActivity : AppCompatActivity() {
         binding.resendotp.visibility = View.INVISIBLE
         binding.resendotp.isEnabled = false
 
-        Handler(Looper.myLooper()!!).postDelayed(Runnable {
+        Handler(Looper.myLooper()!!).postDelayed({
             binding.resendotp.visibility = View.VISIBLE
             binding.resendotp.isEnabled = true
         }, 60000)
