@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.KeyEvent
+import android.view.View
 import android.widget.Toast
 import com.example.roadseyelogin.databinding.ActivityOtpBinding
 
@@ -26,9 +28,10 @@ class OtpActivity : AppCompatActivity() {
             val n5 = binding.inputotp1.text.toString().trim()
             val n6 = binding.inputotp1.text.toString().trim()
 
+
             val message = if (n1.isNotEmpty() && n2.isNotEmpty() && n3.isNotEmpty()
                 && n4.isNotEmpty() && n5.isNotEmpty() && n6.isNotEmpty()) {
-                // Your logic for verifying the numbers goes here
+                // logic for verifying the numbers goes here
                 "OTP verified"
             } else {
                 "Please enter all numbers"
@@ -65,6 +68,7 @@ class OtpActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+
         binding.inputotp3.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -76,6 +80,7 @@ class OtpActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
+
 
         binding.inputotp4.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -89,6 +94,7 @@ class OtpActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+
         binding.inputotp5.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -100,6 +106,7 @@ class OtpActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
+
 
     }
 
