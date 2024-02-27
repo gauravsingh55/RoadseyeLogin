@@ -14,6 +14,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val mobileNo = String.format("+91-%s", intent.getStringExtra("mobile"))
-        binding.mobileNo.text = mobileNo
+        binding.greet.text = mobileNo
     }
 }
