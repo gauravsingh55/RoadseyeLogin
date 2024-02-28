@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="#FEFEFE"
     tools:context=".OtpActivity">
@@ -12,6 +12,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/otp"
         android:contentDescription="@string/otp_logo" />
     <TextView
@@ -164,7 +165,7 @@
             android:textSize="15sp"
             android:text="@string/resend_otp"
             android:fontFamily="@font/nunito"
-            android:textColor="?attr/colorPrimary"/>
+            android:textColor="?attr/colorContainer"/>
 
     </LinearLayout>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="#FEFEFE"
     tools:context=".LoginActivity">
@@ -13,6 +13,7 @@
             android:id="@+id/loginImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="80dp"
             android:src="@drawable/loginimage"
             android:contentDescription="@string/logo" />
 
@@ -62,11 +63,11 @@
 
                 <EditText
                     android:id="@+id/input_mobile_number"
-                    android:layout_width="wrap_content"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:background="@null"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:hint="@string/Dummy_Pno"
                     android:inputType="number"
                     android:maxLength="10"
@@ -78,7 +79,7 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/call"
-                    android:layout_marginStart="100dp"
+
                     android:gravity="center"
                     android:contentDescription="@string/phone_icon" />
 
