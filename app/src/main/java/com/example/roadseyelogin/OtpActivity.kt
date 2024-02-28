@@ -9,6 +9,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import com.example.roadseyelogin.databinding.ActivityOtpBinding
 import com.google.firebase.FirebaseException
@@ -25,12 +26,12 @@ class OtpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOtpBinding
     private lateinit var auth: FirebaseAuth
-    var inputOTP1 = binding.inputotp1
-    var inputOTP2 = binding.inputotp2
-    var inputOTP3 = binding.inputotp3
-    var inputOTP4 = binding.inputotp4
-    var inputOTP5 = binding.inputotp5
-    var inputOTP6 = binding.inputotp6
+    lateinit var inputOTP1 : EditText
+    lateinit var inputOTP2 : EditText
+    lateinit var inputOTP3 : EditText
+    lateinit var inputOTP4 : EditText
+    lateinit var inputOTP5 : EditText
+    lateinit var inputOTP6 : EditText
 
     private lateinit var OTP: String
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
@@ -42,6 +43,13 @@ class OtpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+
+        inputOTP1 = binding.inputotp1
+        inputOTP2 = binding.inputotp2
+        inputOTP3 = binding.inputotp3
+        inputOTP4 = binding.inputotp4
+        inputOTP5 = binding.inputotp5
+        inputOTP6 = binding.inputotp6
 
         addTextChangeListener()
         resendOTPTvVisibility()
@@ -175,7 +183,9 @@ class OtpActivity : AppCompatActivity() {
     }
 
     private fun sendToMain() {
-        startActivity(Intent(this, HomeActivity::class.java))
+        val intent = Intent(this@OtpActivity , HomeActivity::class.java)
+        intent.putExtra("phoneNumber" , phoneNumber)
+        startActivity(intent)
     }
 
     private fun addTextChangeListener() {

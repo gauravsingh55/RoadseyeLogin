@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val mobileNo = String.format("+91-%s", intent.getStringExtra("mobile"))
+        val mobileNo = intent.getStringExtra("phoneNumber").toString()
         binding.greet.text = "Hello\n$mobileNo"
         auth = FirebaseAuth.getInstance()
 
