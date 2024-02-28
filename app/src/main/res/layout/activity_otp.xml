@@ -165,7 +165,7 @@
             android:textSize="15sp"
             android:text="@string/resend_otp"
             android:fontFamily="@font/nunito"
-            android:textColor="?attr/colorContainer"/>
+            android:textColor="#3483FD"/>
 
     </LinearLayout>
 
