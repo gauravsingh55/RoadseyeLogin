@@ -183,9 +183,7 @@ class OtpActivity : AppCompatActivity() {
     }
 
     private fun sendToMain() {
-        val intent = Intent(this@OtpActivity , HomeActivity::class.java)
-        intent.putExtra("phoneNumber" , phoneNumber)
-        startActivity(intent)
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 
     private fun addTextChangeListener() {

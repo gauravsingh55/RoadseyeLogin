@@ -17,8 +17,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val mobileNo = intent.getStringExtra("phoneNumber").toString()
-        binding.greet.text = "Hello\n$mobileNo"
+        binding.greet.text = "Hello\nUser"
         auth = FirebaseAuth.getInstance()
 
         binding.signOut.setOnClickListener {
