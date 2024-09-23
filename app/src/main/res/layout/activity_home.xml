@@ -26,13 +26,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sign_out"
-        android:layout_width="250dp"
-        android:layout_height="70dp"
+        android:layout_width="273dp"
+        android:layout_height="94dp"
         android:layout_marginTop="40dp"
-        android:gravity="center"
         android:background="@drawable/get_otp_background"
         android:backgroundTint="@null"
         android:fontFamily="@font/nunito"
+        android:gravity="center"
         android:text="@string/sign_out"
         android:textColor="?attr/colorPrimaryContainer"
         app:layout_constraintEnd_toEndOf="parent"
